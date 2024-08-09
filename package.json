@@ -1,16 +1,22 @@
 {
 	"devDependencies": {
+		"@architect/architect": "latest",
+		"@enhance/arc-plugin-enhance": "latest",
+		"@enhance/types": "latest",
 		"@eslint/compat": "latest",
 		"@eslint/eslintrc": "latest",
 		"@eslint/js": "latest",
+		"@types/node": "latest",
 		"eslint": "latest",
 		"globals": "latest"
 	},
 	"license": "UNLICENSED",
 	"private": true,
 	"scripts": {
-		"kill": "npx kill-port 3000",
-		"start": "npx serve ./public",
+		"kill": "npx kill-port 3333",
+		"prod": "arc deploy --production",
+		"stage": "arc deploy",
+		"start": "npm run kill && arc sandbox",
 		"test": "npx cowsay no tests... yet!"
 	},
 	"type": "module"
