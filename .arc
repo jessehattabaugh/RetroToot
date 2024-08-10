@@ -1,5 +1,5 @@
 @app
-RetroToot
+retrotoot
 
 @aws
 architecture arm64
