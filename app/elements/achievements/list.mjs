@@ -22,7 +22,8 @@ export default function AchievementsList({ html, state }) {
 			// Calculate the time difference in seconds
 			const diffInSeconds = Math.round((date - now) / 1000);
 			// Format the time difference;
-			const RelativeTime = new Intl.RelativeTimeFormat('en').format(diffInSeconds, 'minutes');
+			const diffInMinutes = Math.round(diffInSeconds / 60);
+			const timeAgo = new Intl.RelativeTimeFormat('en').format(diffInMinutes, 'minutes');
 
 			console.debug('🎖️ achievements-list item', {
 				AchievementDate,
@@ -34,7 +35,7 @@ export default function AchievementsList({ html, state }) {
 				GameIcon,
 				GameTitle,
 				GameURL,
-				RelativeTime,
+				timeAgo,
 			});
 			return html`
 				<li>
@@ -47,8 +48,8 @@ export default function AchievementsList({ html, state }) {
 						<dd>${BadgeURL}</dd>
 						<dt>ConsoleName</dt>
 						<dd>${ConsoleName}</dd>
-						<dt>Date</dt>
-						<dd><time datetime=${Date}>${Date}</time></dd>
+						<dt>AchievementDate</dt>
+						<dd><time datetime=${AchievementDate}>${timeAgo}</time></dd>
 						<dt>Description</dt>
 						<dd>${Description}</dd>
 						<dt>GameIcon</dt>
@@ -57,8 +58,6 @@ export default function AchievementsList({ html, state }) {
 						<dd>${GameTitle}</dd>
 						<dt>GameURL</dt>
 						<dd>${GameURL}</dd>
-						<dt>RelativeTime</dt>
-						<dd>${RelativeTime}</dd>
 					</dl>
 				</li>
 			`;
