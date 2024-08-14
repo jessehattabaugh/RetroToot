@@ -9,6 +9,7 @@
 		"@eslint/js": "latest",
 		"@playwright/test": "latest",
 		"@types/node": "latest",
+		"dotenv": "^16.4.5",
 		"eslint": "latest",
 		"globals": "latest",
 		"playwright": "latest"
@@ -27,8 +28,8 @@
 		"start": "npm run kill && arc sandbox",
 		"test": "npx playwright test",
 		"test:generate": "npx playwright codegen",
-		"test:ui": "npm run test -- --ui",
-		"test:update": "npm run test -- --update-snapshots"
+		"test:ui": "npm test -- --ui",
+		"test:update": "npm test -- --update-snapshots"
 	},
 	"type": "module"
 }

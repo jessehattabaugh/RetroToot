@@ -6,6 +6,6 @@ test.describe('the root index page', () => {
 	});
 
 	test('should display the title', async ({ page }) => {
-		await expect(page.locator('h1 >> text=RetroToot'), 'displays the title').toBeVisible();
+		await expect(page.getByText('RetroToot'), 'displays the title').toBeVisible();
 	});
 });
