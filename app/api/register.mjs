@@ -1,3 +1,5 @@
+import arc from '@architect/functions';
+
 /**
  * someone has submitted the registration form
  * @type {import('@enhance/types').EnhanceApiFn} */
@@ -15,8 +17,13 @@ export async function post(request) {
 			throw new Error('could not fetch profile', { cause: { data, url } });
 		}
 		console.debug('👋 register response', { data });
-		// if the request succeeds, store it in the database
-		// if the database store succeeds, redirect to the user's profile page
+
+		// save the user's profile to the database
+		const db = await arc.tables();
+		const putResult = await db.users.put({ apikey, username });
+		console.debug('📅 registration saved', { putResult });
+
+		// redirect to the user's profile page
 		return { location: `/users/${username}` };
 	} catch ({ cause, message }) {
 		const { data, url } = cause;
