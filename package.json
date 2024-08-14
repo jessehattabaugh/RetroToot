@@ -1,23 +1,35 @@
 {
 	"devDependencies": {
 		"@architect/architect": "latest",
+		"@architect/functions": "latest",
 		"@enhance/arc-plugin-enhance": "latest",
 		"@enhance/types": "latest",
 		"@eslint/compat": "latest",
 		"@eslint/eslintrc": "latest",
 		"@eslint/js": "latest",
+		"@playwright/test": "latest",
 		"@types/node": "latest",
+		"dotenv": "latest",
 		"eslint": "latest",
-		"globals": "latest"
+		"globals": "latest",
+		"playwright": "latest"
 	},
-	"license": "UNLICENSED",
+	"engines": {
+		"node": "~20",
+		"npm": "~10"
+	},
 	"private": true,
 	"scripts": {
+		"deploy": "arc deploy",
+		"deploy:prod": "npm run deploy -- --production",
+		"deploy:test": "npm run deploy -- --name test",
 		"kill": "npx kill-port 3333",
-		"prod": "arc deploy --production",
-		"stage": "arc deploy",
+		"pretest": "npx playwright install",
 		"start": "npm run kill && arc sandbox",
-		"test": "npx cowsay no tests... yet!"
+		"test": "npx playwright test",
+		"test:generate": "npx playwright codegen",
+		"test:ui": "npm test -- --ui",
+		"test:update": "npm test -- --update-snapshots"
 	},
 	"type": "module"
 }

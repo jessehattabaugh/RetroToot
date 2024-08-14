@@ -1,2 +1,11 @@
+.enhance
+.env
 node_modules
+playwright-report
 preferences.arc
+prefs.arc
+public/browser
+public/static.json
+sam.json
+sam.yaml
+test-results

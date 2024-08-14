@@ -13,3 +13,9 @@ enhance/arc-plugin-enhance
 compression true
 fingerprint false
 prune true
+
+@tables
+users
+	apikey String
+	encrypt true
+	username *String
