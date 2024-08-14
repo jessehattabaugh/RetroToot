@@ -3,7 +3,8 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-const url = 'https://z7rnktzokh.execute-api.us-east-1.amazonaws.com';
+const url =
+	'https://z7rnktzokh.execute-api.us-east-1.amazonaws.com'; /** @todo create a hostname for this */
 export default defineConfig({
 	expect: {
 		toMatchSnapshot: { maxDiffPixelRatio: 0.1 },
