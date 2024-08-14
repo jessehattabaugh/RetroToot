@@ -7,5 +7,6 @@ test.describe('the root index page', () => {
 
 	test('should display the title', async ({ page }) => {
 		await expect(page.getByText('RetroToot'), 'displays the title').toBeVisible();
+		/** @todo test the head title */
 	});
 });

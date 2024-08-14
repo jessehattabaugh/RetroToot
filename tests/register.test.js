@@ -15,4 +15,7 @@ test.describe('the registration page', () => {
 		await expect(page, 'redirected to user profile').toHaveURL(/users/);
 		await expect(page.getByText(RA_USERNAME), 'displays the username').toBeVisible();
 	});
+
+	/** @todo test that invalid data causes an error */
+	/** @todo test that users can only register themselves */
 });

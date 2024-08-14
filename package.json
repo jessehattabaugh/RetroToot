@@ -9,7 +9,7 @@
 		"@eslint/js": "latest",
 		"@playwright/test": "latest",
 		"@types/node": "latest",
-		"dotenv": "^16.4.5",
+		"dotenv": "latest",
 		"eslint": "latest",
 		"globals": "latest",
 		"playwright": "latest"
