@@ -11,6 +11,9 @@ test.describe('the user profile page', () => {
 
 	test('displays achievements', async ({ page }) => {
 		// expect the user's achievements to be displayed
-		await expect(page.getByRole('list'), 'achievement list has items').toHaveCount();
+		await expect(
+			page.getByRole('list', { name: 'achievementsList' }),
+			'achievements list has items',
+		).not.toBeEmpty();
 	});
 });
