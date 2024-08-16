@@ -12,7 +12,7 @@ export async function get(request) {
 		if (!user) {
 			throw new Error(`User ${username} not found`);
 		}
-		return { json: { username } };
+		return { json: { username, user } };
 	} catch ({message}) {
 		console.error('🛑 failed to load user', { message });
 		return { json: { message } };
