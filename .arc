@@ -19,6 +19,7 @@ users
 	apikey String
 	encrypt true
 	username *String
+	recentAchievements *Array
 
 @queues
 GetUserRecentAchievements
